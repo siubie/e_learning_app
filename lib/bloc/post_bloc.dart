@@ -15,7 +15,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
         try {
           final posts = await apiRepository.getPostsList();
           emit(LoadedState(posts: posts));
-      } catch (e) {
+        } catch (e) {
           emit(FailedToLoadState(message: e.toString()));
         }
       }
